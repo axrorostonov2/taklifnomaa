@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <title>Taklifnoma</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #ffecd2, #fcb69f);
+            text-align: center;
+            padding: 50px;
+        }
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            width: 400px;
+            margin: auto;
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+        }
+        h1 {
+            color: #e67e22;
+        }
+        p {
+            font-size: 18px;
+        }
+        .date {
+            font-weight: bold;
+            color: #d35400;
+        }
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #cf0404;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h1>🎉 Taklifnoma 🎉</h1>
+    <p>Sizni bizning maxsus tadbirimizga taklif qilamiz!</p>
+    
+    
+    <p><b>Ism:</b> AXROR</p>
+    
+    <p class="date">📅 Sana: 19-IYUL, 2026</p>
+    <p>📍 Manzil: Toshkent shahri </p>
+    <p><b>Musiqa:</b></p>
+    <audio id="music" preload="auto">
+        <source src="qoshiq.mp3" type="audio/mpeg">
+        Sizning brauzeringiz audio elementini qo'llab-quvvatlamaydi.
+    </audio>
+    
+    <a href="#" onclick="playMusicFromGivenTime(30); return false;" class="btn">Kelaman 👍</a>
+</div>
+
+<script>
+    // Musiqa tugagach, avtomatik ravishda qayta boshlash
+    const music = document.getElementById('music');
+    music.addEventListener('ended', () => {
+        music.currentTime = 0;
+        music.play();
+    });
+
+    function playMusicFromGivenTime(time) {
+        music.currentTime = time;
+        music.play();
+    }
+</script>
+</body>
+</html>
