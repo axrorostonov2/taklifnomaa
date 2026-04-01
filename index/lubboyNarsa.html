@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <title>Taklifnoma</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: url("../rasim.jpg") center/cover no-repeat fixed,
+                        radial-gradient(circle at top left, rgba(0,0,0,0.3), transparent 35%),
+                        radial-gradient(circle at bottom right, rgba(0,0,0,0.3), transparent 35%),
+                        linear-gradient(135deg, rgba(0,0,0,0.4), rgba(0,0,0,0.4));
+            background-blend-mode: overlay, soft-light, normal;
+            text-align: center;
+            padding: 50px;
+            min-height: 100vh;
+            animation: backgroundShift 22s infinite alternate ease-in-out;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.06);
+            padding: 35px;
+            border-radius: 25px;
+            width: min(95%, 470px);
+            margin: auto;
+            border: 1px solid rgba(255,255,255,0.12);
+            backdrop-filter: blur(26px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.16);
+            animation: cardFloat 6s infinite ease-in-out;
+        }
+        h1 {
+            color: rgba(255,255,255,0.92);
+            font-size: 2.3rem;
+            letter-spacing: 0.08em;
+            text-shadow: 0 0 8px rgba(0,0,0,0.25);
+            animation: none;
+        }
+        p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        .message p {
+            margin: 14px 0;
+            line-height: 1.7;
+            color: rgba(255,255,255,0.88);
+            opacity: 0;
+            transform: translateY(16px);
+            animation: fadeInText 0.8s forwards ease-out;
+        }
+        .message p:nth-child(1) { animation-delay: 0.4s; }
+        .message p:nth-child(2) { animation-delay: 0.8s; color: rgba(255,255,255,0.9); }
+        .message p:nth-child(3) { animation-delay: 1.2s; color: rgba(255,255,255,0.9); }
+        .message p:nth-child(4) { animation-delay: 1.6s; color: rgba(255,255,255,0.9); }
+        .message p:nth-child(5) { animation-delay: 2.0s; color: rgba(255,255,255,0.9); }
+        .message p:nth-child(6) { animation-delay: 2.4s; color: rgba(255,255,255,0.9); }
+        .message p:nth-child(7) { animation-delay: 2.8s; color: rgba(255,255,255,0.9); }
+        .message strong {
+            color: rgba(255,255,255,0.95);
+        }
+        audio {
+            width: 100%;
+            margin-top: 25px;
+            border-radius: 12px;
+            outline: none;
+        }
+        @keyframes cardFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+        @keyframes glowText {
+            0% { text-shadow: 0 0 12px rgba(214,84,0,0.4); }
+            100% { text-shadow: 0 0 28px rgba(214,84,0,0.9); }
+        }
+        @keyframes fadeInText {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes backgroundShift {
+            from { background-position: top left, bottom right, center; }
+            to { background-position: 0% 0%, 100% 100%, center; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h1>🎊 Tabriklar! 🎊</h1>
+    <div class="message">
+        <p>Bugun sizga eng yorqin va iliq tabriklarimizni taqdim etamiz.</p>
+        <p><strong>Sen alohida kunni boshdan kechirasiz:</strong> dilda mehr, osmonda quvonch va yuzda tabassum bo‘lsin.</p>
+        <p>Har bir daqiqa siz uchun yangi imkoniyat, yangi orzu va yangi baxt olib kelsin.</p>
+        <p>Do‘stlaringiz va yaqinlaringiz yoningizda bo‘lishi hayotingizni yanada chiroyli qilib boyitsin.</p>
+        <p>Bugungi kun eng iliq xotiralar, kulgu va go‘zal voqealar bilan to‘lsin.</p>
+        <p>Yuragingizdagi har bir iste’dod yorqin nur kabi charaqlasin.</p>
+        <p>Sizni quvonch bilan to‘la kelajak va yangi imkoniyatlar kutib tursin.</p>
+    </div>
+    <audio id="music" preload="auto" controls autoplay>
+        <source src="../qoshiq.mp3" type="audio/mpeg">
+        Sizning brauzeringiz audio elementini qo'llab-quvvatlamaydi.
+    </audio>
+</div>
+
+<script>
+    const music = document.getElementById('music');
+    music.addEventListener('ended', () => {
+        music.currentTime = 0;
+        music.play();
+    });
+</script>
+
+</body>
+</html>
